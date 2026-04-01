@@ -48,4 +48,9 @@ describe('validateTitle', () => {
   it('deve considerar o título após trim', () => {
     expect(validateTitle('  abc  ')).toBe(true);
   });
+
+  it('deve retornar falso para strings numéricas', () => {
+    expect(validateTitle('  123  ')).toBe(false);
+    expect(validateTitle('123')).toBe(false);
+  })
 });
